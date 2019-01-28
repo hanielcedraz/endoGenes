@@ -32,9 +32,6 @@ Install_And_Load(c('SLqPCR', 'RColorBrewer', 'RankAggreg', 'gplots',
 # suppressPackageStartupMessages(library("ctrlGene"))
 
 
-## Identifique o Diretorio de Trabalho
-
-#setwd(ifelse(.Platform$OS.type=="unix", '/Users/haniel/Documents/scripts_SLqPCR_NormFinder/', 'E:/Projeto_Mestrado/ANALISES/analise_estabilidade_gene_eferencia/the_comparative_delta-Ct_method'))
 
 option_list <- list(
   make_option(c("-f", "--file"), type = "character", default = "endogenos_ct.txt",
