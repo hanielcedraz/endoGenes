@@ -34,7 +34,7 @@ Install_And_Load(c('SLqPCR', 'RColorBrewer', 'RankAggreg', 'gplots',
 
 
 option_list <- list(
-  make_option(c("-f", "--file"), type = "character", default = "endogenos_ct.txt",
+  make_option(c("-f", "--file"), type = "character", default = "endogenous_ct.txt",
               help = "The filename of the dataset file [default %default]",
               dest = "samplesFile"),
   make_option(c("-e", "--efficience"), type = "character", default = "efficience_list.txt",
