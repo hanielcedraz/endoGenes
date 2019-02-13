@@ -49,7 +49,7 @@ option_list <- list(
 
 # get command line options, if help option encountered print help and exit,
 # otherwise if options not found on command line then set defaults,
-opt <- parse_args(OptionParser(option_list = option_list, description =  paste('Authors: Haniel Cedraz de Oliveira. --- Version: 1.0', sep = "\n")))
+opt <- parse_args(OptionParser(option_list = option_list, description =  paste('Authors: OLIVEIRA, H.C. --- Version: 0.0.1', sep = "\n")))
 
 ## Preparing dataset
 final_folder <- opt$output
