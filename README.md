@@ -1,7 +1,9 @@
 ##Reference_gene
 </br>
 
-This pipeline performs, automatically, analysis of three of the most used algorithm to the stability of reference genes Required files: 
+This pipeline performs, automatically, analysis of three of the most used algorithm to the stability of reference genes 
+</br>
+Required files: 
 </br>
 dataset file (default: endogenos_ct.txt) 
 </br>
