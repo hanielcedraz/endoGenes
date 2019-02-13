@@ -1,4 +1,4 @@
-<h1> Reference genes
+<h1> Reference genes</h1>
 </br>
 
 This pipeline performs, automatically, analysis of three of the most used algorithm to the stability of reference genes 
