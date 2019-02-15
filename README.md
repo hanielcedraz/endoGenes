@@ -1,7 +1,7 @@
 <h1> Reference genes</h1>
 </br>
 
-This pipeline performs, automatically, analysis of three of the most used algorithm to the stability of reference genes 
+This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes 
 </br>
 Required files: 
 </br>
