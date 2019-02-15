@@ -3,7 +3,7 @@
 </br>
 </br>
 </br>
-git clone https://github.com/hanielcedraz/Reference_gene.git
+$ git clone https://github.com/hanielcedraz/Reference_gene.git
 </br>
 </br>
 This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes 
@@ -17,5 +17,5 @@ efficience list (default: efficiencies_list.txt)
 </br>
 </br>
 Usage on linux: </br>
- ./reference_genes_analysis.R -f dataset_file.txt -e efficience_list.txt
+$ ./reference_genes_analysis.R -f dataset_file.txt -e efficience_list.txt
 
