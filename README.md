@@ -1,6 +1,11 @@
 <h1> Reference genes</h1>
 </br>
-
+</br>
+</br>
+</br>
+git clone https://github.com/hanielcedraz/Reference_gene.git
+</br>
+</br>
 This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes 
 </br>
 Required files: 
