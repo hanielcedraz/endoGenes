@@ -37,9 +37,9 @@ option_list <- list(
   make_option(c("-f", "--file"), type = "character", default = "endogenous_ct.txt",
               help = "The filename of the dataset file [default %default]",
               dest = "samplesFile"),
-  make_option(c("-e", "--efficience"), type = "character", default = "efficience_list.txt",
+  make_option(c("-e", "--efficiency"), type = "character", default = "efficiencies_list.txt",
               help = "The filename of the gene efficience file [default %default]",
-              dest = "efficienceList"),
+              dest = "efficiencyList"),
   make_option(c("-o", "--output"), type="character", default="01-results",
               help="output folder [default %default]",
               dest="output")
@@ -66,7 +66,7 @@ ctvalue <- read.table(opt$samplesFile, header = TRUE, dec = ',', row.names = 1);
 
 
 ctvalue_new <- ctvalue[,-length(ctvalue)] # rodar essa linha apenas uma vez
-eficiencia <- read.table(opt$efficienceList, header = FALSE, col.names = 'EFFICIENCE')  # Valores de eficiencia
+eficiencia <- read.table(opt$efficiencyList, header = FALSE, col.names = 'EFFICIENCE')  # Valores de eficiencia
 rel_values <- function(dados, efi_list){
   res <- list()
   for(i in 1:dim(dados)[2]){
@@ -132,10 +132,9 @@ dev.off()
 
 ### -----------------------NORMFINDER ---------------------
 #Using r.NormOldStab5.txt function file
-#Este arquivo deve ficar na mesma pasta do script
 source("r.NormOldStab5.txt")
 
-#### Analise utilizando ctvalue
+#### Analysis using ctvalue
 #
 #
 
@@ -193,7 +192,7 @@ dev.off()
 
 #-------------------------------RANKAGGREG--------------------------
 
-#-------------------------------POR FERRAMENTA----------------------
+
 #
 # 
 
