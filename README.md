@@ -14,12 +14,9 @@ This pipeline performs an automated analysis of the three most used algorithms t
 </br>
 Required files: 
 </br>
-</br>
 dataset file (default: endogenous_ct.txt) 
 </br>
-</br>
 efficience list (default: efficiencies_list.txt)
-</br>
 </br>
 </br>
 Usage on linux: </br>
