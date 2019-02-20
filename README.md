@@ -5,13 +5,18 @@
 </br>
 $ git clone https://github.com/hanielcedraz/Reference_gene.git
 </br>
-  cd Reference genes
+</br>
+$ cd Reference genes
+</br>
 </br>
 This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes 
 </br>
+</br>
 Required files: 
 </br>
+</br>
 dataset file (default: endogenous_ct.txt) 
+</br>
 </br>
 efficience list (default: efficiencies_list.txt)
 </br>
