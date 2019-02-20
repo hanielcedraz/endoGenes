@@ -45,11 +45,9 @@ option_list <- list(
               dest="output")
 )
 
-
-
 # get command line options, if help option encountered print help and exit,
 # otherwise if options not found on command line then set defaults,
-opt <- parse_args(OptionParser(option_list = option_list, description =  paste('Authors: OLIVEIRA, H.C. --- Version: 0.0.1', sep = "\n")))
+opt <- parse_args(OptionParser(option_list = option_list, description =  paste('Authors: OLIVEIRA, H.C., sep = "\n", Version: 0.0.1', sep = "\n")))
 
 ## Preparing dataset
 final_folder <- opt$output
@@ -80,10 +78,10 @@ qvalue <- rel_values(ctvalue_new, eficiencia$EFFICIENCE); nomes_col <- colnames(
 
 write.csv(qvalue, paste(opt$output, '/', 'results_qvalues.csv', sep = ''), quote = FALSE, row.names = FALSE)
 
-## ---------------------------------REFERENCE GENES------------------------------------
+#---------------------------------------REFERENCE GENES----------------------------------
 
 
-#---------------------------------GeNorm---------------------------------------
+#-------------------------------------------GeNorm---------------------------------------
 #Using SLqPCR package
 ## Selection of reference/housekeeping genes
 
@@ -130,7 +128,7 @@ dev.off()
 
 
 
-### -----------------------NORMFINDER ---------------------
+### ---------------------------------------NORMFINDER ---------------------------------------
 #Using r.NormOldStab5.txt function file
 source("r.NormOldStab5.txt")
 
@@ -161,7 +159,7 @@ mypalette <- brewer.pal(3, "Set2")
 dev.off()
 
 
-#--------------------------BESTKEEPER-------------------------------
+#---------------------------------------BESTKEEPER---------------------------------------
 #Using ctrlGene package
 bestkeeper_results = bestKeeper(ctvalue[,1:ncol(ctvalue)-1], ctVal = TRUE)
 
@@ -190,7 +188,7 @@ dev.off()
 
 
 
-#-------------------------------RANKAGGREG--------------------------
+#---------------------------------------RANKAGGREG---------------------------------------
 
 
 #
