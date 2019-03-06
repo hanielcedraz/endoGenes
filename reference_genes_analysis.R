@@ -204,11 +204,13 @@ ratools <- t(data.frame(NormFinder = rownames(Resulttotal$Ordered), GeNorm = ran
 ra_weight_ratools <- t(data.frame(NormFinder = Resulttotal$Ordered$Stability, GeNorm = rankingeral$MValue, Bestkeeper = best_genes[,1])); colnames(ratools) <- paste(1:ncol(ratools)); write.csv(ra_weight_ratools, paste(opt$output, '/', 'ratools_gene_weight.csv', sep = ''), quote = FALSE)
 
 k <- ncol(ratools)
+pdf(paste(opt$output, '/', "Iteraction_plot.pdf", sep = ''))
 if(k>10){
-    (CESP <- RankAggreg(ratools, k = ncol(ratools), ra_weight_ratools, method="CE", distance="Spearman", weight = .25, rho = .1, verbose = TRUE))
+    (CESP <- RankAggreg(ratools, k = ncol(ratools), ra_weight_ratools, method="CE", distance="Spearman", weight = .25, rho = .1, verbose = TRUE, ))
 }else{
     (CESP <- BruteAggreg(ratools, k = ncol(ratools), ra_weight_ratools, distance = "Spearman"))
 }
+dev.off()
 
 
 final_res <- data.frame(Rank = paste(1:length(CESP$top.list)), Gene = CESP$top.list)
