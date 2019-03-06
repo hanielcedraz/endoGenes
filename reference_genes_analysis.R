@@ -6,7 +6,7 @@
 
 
 #Install and Load Multiple R Packages
-
+paste("Install and Load needed Packages")
 Install_And_Load <- function(packages) {
   k <- packages[!(packages %in% installed.packages()[,'Package'])];
   if(length(k))
@@ -84,6 +84,7 @@ write.csv(qvalue, paste(opt$output, '/', 'results_qvalues.csv', sep = ''), quote
 #-------------------------------------------GeNorm---------------------------------------
 #Using SLqPCR package
 ## Selection of reference/housekeeping genes
+paste("GeNorm analysis - Using SLqPCR package")
 
 res.gene <- selectHKgenes(qvalue, method = "Vandesompele", minNrHK = 2, geneSymbol = names(ctvalue_new), trace = TRUE, na.rm = FALSE)
 
@@ -130,6 +131,7 @@ dev.off()
 
 ### ---------------------------------------NORMFINDER ---------------------------------------
 #Using r.NormOldStab5.txt function file
+paste("NormFinder analysis - Using r.NormOldStab5.txt function")
 source("r.NormOldStab5.txt")
 
 #### Analysis using ctvalue
@@ -161,7 +163,9 @@ dev.off()
 
 #---------------------------------------BESTKEEPER---------------------------------------
 #Using ctrlGene package
+paste("BestKeeper analysis - Using ctrlGene package")
 bestkeeper_results = bestKeeper(ctvalue[,1:ncol(ctvalue)-1], ctVal = TRUE)
+bestkeeper_results
 
 write.csv(bestkeeper_results$pair.Wise.cor, paste(opt$output, '/', 'Bestkeeper_results_pair_wise_correlation.csv', sep = ''), quote = FALSE)
 
@@ -189,7 +193,7 @@ dev.off()
 
 
 #---------------------------------------RANKAGGREG---------------------------------------
-
+paste("Final ranking - using RankAggreg package")
 
 #
 # 
@@ -211,3 +215,6 @@ final_res <- data.frame(Rank = paste(1:length(CESP$top.list)), Gene = CESP$top.l
 
 write.csv(final_res, paste(opt$output, '/', 'Final_ranking.csv', sep = ''), quote = FALSE, row.names = FALSE)
 
+
+
+paste("It's done. See 01-results folder")
