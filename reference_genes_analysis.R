@@ -63,8 +63,8 @@ if (!file.exists(opt$samplesFile)) {
 ctvalue <- read.table(opt$samplesFile, header = TRUE, dec = ',', row.names = 1); str(ctvalue); summary(ctvalue); head(ctvalue)
 
 
-ctvalue_new <- ctvalue[,-length(ctvalue)] # rodar essa linha apenas uma vez
-eficiencia <- read.table(opt$efficiencyList, header = FALSE, col.names = 'EFFICIENCE')  # Valores de eficiencia
+ctvalue_new <- ctvalue[,-length(ctvalue)] #
+eficiencia <- read.table(opt$efficiencyList, header = FALSE, col.names = 'EFFICIENCE')  # Efficiency values
 rel_values <- function(dados, efi_list){
   res <- list()
   for(i in 1:dim(dados)[2]){
