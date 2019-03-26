@@ -64,7 +64,7 @@ ctvalue <- read.table(opt$samplesFile, header = TRUE, dec = ',', row.names = 1);
 
 
 ctvalue_new <- ctvalue[,-length(ctvalue)] #
-eficiencia <- read.table(opt$efficiencyList, header = FALSE, col.names = 'EFFICIENCE')  # Efficiency values
+eficiencia <- read.table(opt$efficiencyList, header = FALSE, col.names = 'EFFICIENCY')  # Efficiency values
 rel_values <- function(dados, efi_list){
   res <- list()
   for(i in 1:dim(dados)[2]){
@@ -74,7 +74,7 @@ rel_values <- function(dados, efi_list){
   res_matrix <- do.call('cbind',res);
 }
 
-qvalue <- rel_values(ctvalue_new, eficiencia$EFFICIENCE); nomes_col <- colnames(ctvalue_new[,1:ncol(ctvalue_new)]); colnames(qvalue) <- nomes_col; head(qvalue)
+qvalue <- rel_values(ctvalue_new, eficiencia$EFFICIENCY); nomes_col <- colnames(ctvalue_new[,1:ncol(ctvalue_new)]); colnames(qvalue) <- nomes_col; head(qvalue)
 
 write.csv(qvalue, paste(opt$output, '/', 'results_qvalues.csv', sep = ''), quote = FALSE, row.names = FALSE)
 
