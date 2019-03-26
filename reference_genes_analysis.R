@@ -56,7 +56,12 @@ if(!file.exists(file.path(final_folder))) dir.create(file.path(final_folder), re
 
 
 if (!file.exists(opt$samplesFile)) {
-  write(paste("Sample file",opt$samplesFile,"does not exist\n"), stderr())
+  write(paste("Sample file", opt$samplesFile, "does not exist\n"), stderr())
+  stop()
+}
+
+if (!file.exists(opt$efficiencyList)) {
+  write(paste("Sample file", opt$efficiencyList, "does not exist\n"), stderr())
   stop()
 }
 
@@ -219,4 +224,4 @@ write.csv(final_res, paste(opt$output, '/', 'Final_ranking.csv', sep = ''), quot
 
 
 
-paste("It's done. See 01-results folder")
+paste("It's done. See ", opt$output, "folder")
