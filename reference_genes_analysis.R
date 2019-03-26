@@ -64,7 +64,7 @@ ctvalue <- read.table(opt$samplesFile, header = TRUE, dec = ',', row.names = 1);
 
 
 ctvalue_new <- ctvalue[,-length(ctvalue)] #
-eficiencia <- read.table(opt$efficiencyList, header = FALSE, col.names = 'EFFICIENCY')  # Efficiency values
+eficiencia <- read.table(opt$efficiencyList, dec = ',', header = FALSE, col.names = 'EFFICIENCY')  # Efficiency values
 rel_values <- function(dados, efi_list){
   res <- list()
   for(i in 1:dim(dados)[2]){
