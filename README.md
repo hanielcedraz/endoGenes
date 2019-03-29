@@ -15,9 +15,9 @@ Required files:
 </br>
 dataset file (default: endogenous_ct.txt) 
 </br>
-efficience list (default: efficiencies_list.txt)
+efficiency list (default: efficiencies_list.txt)
 </br>
 </br>
 Usage on linux: </br>
-$ ./reference_genes_analysis.R -f dataset_file.txt -e efficience_list.txt
+$ ./reference_genes_analysis.R -f dataset_file.txt -e efficiency_list.txt
 
