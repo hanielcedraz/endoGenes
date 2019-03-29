@@ -5,8 +5,7 @@
 </br>
 $ git clone https://github.com/hanielcedraz/Reference_gene.git
 </br>
-</br>
-$ cd Reference genes
+$ cd Reference_gene
 </br>
 </br>
 This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes 
