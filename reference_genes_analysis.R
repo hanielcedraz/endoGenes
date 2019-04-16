@@ -42,7 +42,16 @@ option_list <- list(
               dest = "efficiencyList"),
   make_option(c("-o", "--output"), type="character", default="01-results",
               help="output folder [default %default]",
-              dest="output")
+              dest="output"),
+  make_option(c("-m", "--method"), type = "character", default = "CE",
+              help = "method to be used to perform rank aggregation: Cross Entropy Monte Carlo (CE) or Genetic Algorithm (GA) in Rankaggreg analysis [default %default]",
+              dest = "method"),
+  make_option(c("-i", "--iteraction"), type = "numeric", default = 1000,
+              help = "the maximum number of iterations allowed in Rankaggreg analysis [default %default]",
+              dest = "iteraction"),
+  make_option(c("-d", "--distance"), type = "character", default = "Spearman",
+              help = "distance which 'measures' the similarity between the ordered lists ('Spearman' or 'Kendall') in Rankaggreg analysis [default %default]",
+              dest = "distance")
 )
 
 # get command line options, if help option encountered print help and exit,
@@ -211,9 +220,11 @@ ra_weight_ratools <- t(data.frame(NormFinder = Resulttotal$Ordered$Stability, Ge
 k <- ncol(ratools)
 pdf(paste(opt$output, '/', "RankAggreg_Iteraction_plot.pdf", sep = ''))
 if(k>10){
-    (CESP <- RankAggreg(ratools, k = ncol(ratools), ra_weight_ratools, method="CE", distance="Spearman", weight = .25, rho = .1, verbose = TRUE, ))
+  write(paste('Using RankAggreg function - via the Cross-Entropy Monte Carlo algorithm or the Genetic Algorithm.'), stderr())
+    (CESP <- RankAggreg(ratools, k = ncol(ratools), ra_weight_ratools, method=opt$method, distance=opt$distance, weight = .25, rho = .1, maxIter = opt$iteraction, verbose = TRUE))
 }else{
-    (CESP <- BruteAggreg(ratools, k = ncol(ratools), ra_weight_ratools, distance = "Spearman"))
+  write(paste('Using BruteAggreg function - via the brute force approach.'), stderr())
+    (CESP <- BruteAggreg(ratools, k = ncol(ratools), ra_weight_ratools, distance=opt$distance))
 }
 dev.off()
 
