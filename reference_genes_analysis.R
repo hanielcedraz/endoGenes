@@ -52,10 +52,10 @@ option_list <- list(
   make_option(c("-d", "--distance"), type = "character", default = "Spearman",
               help = "distance which 'measures' the similarity between the ordered lists ('Spearman' or 'Kendall') in Rankaggreg analysis [default %default]",
               dest = "distance"),
-  make_option(c("-g", "--group"), type = "character", default = "TRUE",
+  make_option(c("-g", "--group"), type = "logical", default = "TRUE",
               help = "Analysis of Normfinder should be performed in groups? [default %default]",
               dest = "group"),
-  make_option(c("-c", "--ctvalue"), type = "character", default = "TRUE",
+  make_option(c("-c", "--ctvalue"), type = "logical", default = "TRUE",
               help = "Analysis of Normfinder should be performed using raw ct values? [default %default]",
               dest = "ctVal")
 )
