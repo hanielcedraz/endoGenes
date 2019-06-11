@@ -51,7 +51,13 @@ option_list <- list(
               dest = "iteraction"),
   make_option(c("-d", "--distance"), type = "character", default = "Spearman",
               help = "distance which 'measures' the similarity between the ordered lists ('Spearman' or 'Kendall') in Rankaggreg analysis [default %default]",
-              dest = "distance")
+              dest = "distance"),
+  make_option(c("-g", "--group"), type = "character", default = "TRUE",
+              help = "Analysis of Normfinder should be performed in groups? [default %default]",
+              dest = "group"),
+  make_option(c("-c", "--ctvalue"), type = "character", default = "TRUE",
+              help = "Analysis of Normfinder should be performed using raw ct values? [default %default]",
+              dest = "ctVal")
 )
 
 # get command line options, if help option encountered print help and exit,
@@ -153,7 +159,7 @@ source("r.NormOldStab5.txt")
 
 write.table(t(ctvalue), paste(opt$output, '/', 'normdata_trans_normfinder.txt', sep = ''), quote = FALSE); normdata = read.table(paste(opt$output, '/', 'normdata_trans_normfinder.txt', sep = ''), header = TRUE); head(normdata); tail(normdata)
 
-Resulttotal <- Normfinder(paste(opt$output, '/', 'normdata_trans_normfinder.txt', sep = ''), Groups = TRUE, ctVal = TRUE); Resulttotal$Ordered
+Resulttotal <- Normfinder(paste(opt$output, '/', 'normdata_trans_normfinder.txt', sep = ''), Groups = opt$group, ctVal = opt$ctVal); Resulttotal$Ordered
 
 write.csv(Resulttotal$Ordered, paste(opt$output, '/', 'ranking_Ordered_normfinder.csv', sep = ''), quote = FALSE, row.names = TRUE)
 
