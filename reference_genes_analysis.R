@@ -63,7 +63,6 @@ final_folder <- opt$output
 if(!file.exists(file.path(final_folder))) dir.create(file.path(final_folder), recursive = TRUE, showWarnings = FALSE)
 
 
-
 if (!file.exists(opt$samplesFile)) {
   write(paste("Sample file", opt$samplesFile, "does not exist\n"), stderr())
   stop()
@@ -83,7 +82,7 @@ rel_values <- function(dados, efi_list){
   res <- list()
   for(i in 1:dim(dados)[2]){
     res[[i]] <- relQuantPCR(dados[,i], E = efi_list[i], na.rm = FALSE)
-    
+
   }
   res_matrix <- do.call('cbind',res);
 }
@@ -113,13 +112,13 @@ write.csv(rankingeral, paste(opt$output, '/', 'ranking_geral_genorm.csv', sep = 
 ## Plot stability Genes
 
 png(paste(opt$output, '/', 'Rplot_gene_stability_by_genorm.png', sep = ''),
-    width = 1280, 
+    width = 1280,
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set1")
     matplot(cbind(rankingeral$MValue), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(rankingeral$MValue)), lty = 1, lwd = 2, main = "Gene stability measure by SLqPCR Package")
     axis(1, at = 1:nrow(rankingeral), labels = as.character(rankingeral$Gene))
-    axis(2, at = seq(0, max(rankingeral$MValue), by = 0.2), labels = as.character())
+    axis(2, at = min(rankingeral$MValue):max(rankingeral$MValue), labels = as.character())
     box()
     abline(h = seq(0, max(rankingeral$MValue), by = 0.2), lty = 2, lwd = 1, col = "grey")
 dev.off()
@@ -129,7 +128,7 @@ dev.off()
 ###
 
 png(paste(opt$output, '/', 'Rplot_gene_variation_by_genorm.png', sep = ''),
-    width = 1280, 
+    width = 1280,
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(8, "Spectral")
@@ -163,13 +162,13 @@ write.csv(Resulttotal$UnOrdered, paste(opt$output, '/', 'ranking_UnOrdered_normf
 write.csv(Resulttotal$PairOfGenes, paste(opt$output, '/', 'PairOfGenes_normfinder.csv', sep = ''), quote = FALSE, row.names = TRUE)
 
 png(paste(opt$output, '/', 'Rplot_gene_stability_by_NormFinder.png', sep = ''),
-    width = 1280, 
+    width = 1280,
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set2")
-    matplot(cbind(Resulttotal$Ordered$Stability), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered$Stability)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
+    matplot(cbind(Resulttotal$Ordered), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
     axis(1, at = 1:nrow(Resulttotal$Ordered), labels = as.character(rownames(Resulttotal$Ordered)))
-    axis(2, at = seq(0:max(Resulttotal$Ordered$Stability), by = 0.2), labels = as.character())
+    axis(2, at = min(Resulttotal$Ordered):max(Resulttotal$Ordered), labels = as.character())
     box()
     #abline(h = seq(0.2, 1.0, by = 0.2), lty = 1, lwd = 1, col = "grey")
 dev.off()
@@ -193,13 +192,13 @@ bestkeeper_genes <- t(sort(bestkeeper_results$CP.statistics[6,])); best_genes <-
 write.csv(best_genes, paste(opt$output, '/', 'Bestkeeper_best_genes_ordered.csv', sep = ''), quote = FALSE)
 
 png(paste(opt$output, '/', 'Rplot_gene_stability_by_BestKeeper.png', sep = ''),
-    width = 1280, 
+    width = 1280,
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set2")
 matplot(cbind(best_genes), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(best_genes)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
 axis(1, at = 1:nrow(best_genes), labels = as.character(rownames(best_genes)))
-axis(2, at = seq(0, max(best_genes), by = 0.2), labels = as.character())
+axis(2, at = min(best_genes):max(best_genes), labels = as.character())
 box()
 dev.off()
 #abline(h = seq(0.2, 1.0, by = 0.2), lty = 1, lwd = 1, col = "grey")
@@ -210,7 +209,7 @@ dev.off()
 paste("Final ranking - using RankAggreg package")
 
 #
-# 
+#
 
 ratools <- t(data.frame(NormFinder = rownames(Resulttotal$Ordered), GeNorm = rankingeral$Gene, Bestkeeper = rownames(best_genes))); colnames(ratools) <- paste(1:ncol(ratools)); write.csv(ratools, paste(opt$output, '/', 'ratools_gene_list.csv', sep = ''), quote = FALSE)
 
