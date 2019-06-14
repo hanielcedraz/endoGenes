@@ -220,7 +220,8 @@ paste("Final ranking - using RankAggreg package")
 ratools <- t(data.frame(NormFinder = rownames(Resulttotal$Ordered), GeNorm = rankingeral$Gene, Bestkeeper = rownames(best_genes))); colnames(ratools) <- paste(1:ncol(ratools)); write.csv(ratools, paste(opt$output, '/', 'ratools_gene_list.csv', sep = ''), quote = FALSE)
 
 
-ra_weight_ratools <- t(data.frame(NormFinder = Resulttotal$Ordered$Stability, GeNorm = rankingeral$MValue, Bestkeeper = best_genes[,1])); colnames(ratools) <- paste(1:ncol(ratools)); write.csv(ra_weight_ratools, paste(opt$output, '/', 'ratools_gene_weight.csv', sep = ''), quote = FALSE)
+ra_weight_ratools <- t(data.frame(NormFinder = Resulttotal$Ordered$Stability, GeNorm = rankingeral$MValue, Bestkeeper = best_genes[,1])); colnames(ra_weight_ratools) <- paste(1:ncol(ratools)); write.csv(ra_weight_ratools, paste(opt$output, '/', 'ratools_gene_weight.csv', sep = ''), quote = FALSE)
+
 
 k <- ncol(ratools)
 pdf(paste(opt$output, '/', "RankAggreg_Iteraction_plot.pdf", sep = ''))
