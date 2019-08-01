@@ -5,7 +5,7 @@
  
  ## Download this repository to a preference path:<br>
 	# Git is required
-   	 $ git clone https://github.com/hanielcedraz/Reference_gene.git
+   	 $ git clone https://github.com/hanielcedraz/refGenes.git
    	 $ cd refGenes
 
     
