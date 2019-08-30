@@ -23,11 +23,11 @@
     efficiency list (default: efficiencies_list.txt)
 
   ## Usage on linux or Mac OS terminal: </br>
-    $ ./refGenes.R -f dataset_file.txt -e efficiency_list.txt
+    $ ./endoGene.R -f dataset_file.txt -e efficiency_list.txt
     
     
     
-    Obs. Also you can open the refGenes.R file with your favorite R IDE and follow the script (not recomended)
+    Obs. Also you can open the endoGene.R file with your favorite R IDE and follow the script (not recomended)
     
 
 
