@@ -29,8 +29,19 @@
     Obs. Also you can open the refGenes.R file with your favorite R IDE and follow the script (not recomended)
     
     
-    | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+|   GeneName    |   SD_Value    |
+|   ---------   |   ---------   |
+|   RPL5    |   0.666    |
+|   MRPS27  |   0.819    |
+|   HPRT1   |   0.832    |
+|   HMBS    |   0.836    |
+|   MRPS30  |   0.92     |
+|   EEF1    |   0.926    |
+|   HSF3    |   1.068    |
+|   LDAH    |   1.101    |
+|   ACTB    |   1.167    |
+|   ACTA1   |   1.176    |
+|   HSP90   |   1.356    |
+|   TFRC    |   1.458    |
+|   HSP70   |   2.443    |
 
