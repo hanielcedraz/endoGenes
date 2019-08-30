@@ -4,7 +4,8 @@
    This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes
  
  ## Download this repository to a preference path:<br>
-	# Git is required
+	# Cloning the whole repository (Git is required)
+	# Open the terminal on unixOS and navigate to your work directory
    	 $ git clone https://github.com/hanielcedraz/refGenes.git
    	 $ cd refGenes
 	
