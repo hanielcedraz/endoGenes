@@ -37,11 +37,6 @@
 |   HMBS    |   0.836    |
 |   MRPS30  |   0.92     |
 |   EEF1    |   0.926    |
-|   HSF3    |   1.068    |
-|   LDAH    |   1.101    |
-|   ACTB    |   1.167    |
-|   ACTA1   |   1.176    |
-|   HSP90   |   1.356    |
-|   TFRC    |   1.458    |
-|   HSP70   |   2.443    |
 
+
+![Gene Stability measured by NormFinder](https://ibb.co/Fnk2QBB)
