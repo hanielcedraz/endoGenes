@@ -112,7 +112,7 @@ res.gene <- selectHKgenes(qvalue, method = "Vandesompele", minNrHK = 2, geneSymb
 
 rankingeral <- data.frame(c(1, 1, 3:ncol(qvalue)), res.gene$ranking, MvalorG = sort(c(res.gene$meanM[length(res.gene$meanM)], res.gene$meanM))); names(rankingeral) <- c("rank", 'Gene', 'MValue'); rankingeral
 
-write.csv(rankingeral, paste(opt$output, '/', 'ranking_geral_genorm.csv', sep = ''), quote = FALSE, row.names = FALSE)
+write.csv(rankingeral, paste(opt$output, '/', 'general_ranking_genorm.csv', sep = ''), quote = FALSE, row.names = FALSE)
 
 
 ## Plot stability Genes
