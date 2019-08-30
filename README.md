@@ -8,6 +8,7 @@
 	# Open the terminal on unixOS and navigate to your work directory
    	 $ git clone https://github.com/hanielcedraz/refGenes.git
    	 $ cd refGenes
+	 $ chmod +x refGenes.R
 	
 	# Downloading zip file
 	   - Under the repository name, click Clone or download.
@@ -107,4 +108,7 @@
 
 
 ## Plots
-<a href="https://ibb.co/Fnk2QBB"><img src="https://i.ibb.co/Fnk2QBB/Rplot-gene-stability-by-Best-Keeper.png" alt="Rplot-gene-stability-by-Best-Keeper" border="0"></a> <a href="https://ibb.co/J3jxYV0"><img src="https://i.ibb.co/J3jxYV0/Rplot-gene-stability-by-genorm.png" alt="Rplot-gene-stability-by-genorm" border="0"></a> <a href="https://ibb.co/rtjgk3w"><img src="https://i.ibb.co/rtjgk3w/Rplot-gene-stability-by-Norm-Finder.png" alt="Rplot-gene-stability-by-Norm-Finder" border="0"></a> <a href="https://ibb.co/m4PsPjD"><img src="https://i.ibb.co/m4PsPjD/Rplot-gene-variation-by-genorm.png" alt="Rplot-gene-variation-by-genorm" border="0"></a>
+<a href="https://ibb.co/Fnk2QBB"><img src="https://i.ibb.co/Fnk2QBB/Rplot-gene-stability-by-Best-Keeper.png" alt="Rplot-gene-stability-by-Best-Keeper" border="0"></a> 
+<a href="https://ibb.co/J3jxYV0"><img src="https://i.ibb.co/J3jxYV0/Rplot-gene-stability-by-genorm.png" alt="Rplot-gene-stability-by-genorm" border="0"></a> <br>
+<a href="https://ibb.co/rtjgk3w"><img src="https://i.ibb.co/rtjgk3w/Rplot-gene-stability-by-Norm-Finder.png" alt="Rplot-gene-stability-by-Norm-Finder" border="0"></a> 
+<a href="https://ibb.co/m4PsPjD"><img src="https://i.ibb.co/m4PsPjD/Rplot-gene-variation-by-genorm.png" alt="Rplot-gene-variation-by-genorm" border="0"></a>
