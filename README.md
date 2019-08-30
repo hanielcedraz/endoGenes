@@ -28,7 +28,10 @@
     
     Obs. Also you can open the refGenes.R file with your favorite R IDE and follow the script (not recomended)
     
-    
+
+
+## results
+	#Tables
 |   GeneName    |   SD_Value    |
 |   ---------   |   ---------   |
 |   RPL5    |   0.666    |
