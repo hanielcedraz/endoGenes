@@ -7,6 +7,11 @@
 	# Git is required
    	 $ git clone https://github.com/hanielcedraz/refGenes.git
    	 $ cd refGenes
+	
+	# Downloading zip file
+	   - Under the repository name, click Clone or download.
+	   - Click on Download ZIP
+	  
 
     
   ## Required files:
