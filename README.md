@@ -1,6 +1,6 @@
 
  
- # refGenes - Reference Genes Analysis
+ # endoGene - Reference Genes Analysis
    This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes
  
 ## STEP.1 -Download this repository to a preference path:<br>
