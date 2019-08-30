@@ -6,9 +6,9 @@
 ## STEP.1 -Download this repository to a preference path:<br>
 	# Cloning the whole repository (Git is required)
 	# Open the terminal on unixOS and navigate to your work directory
-   	 $ git clone https://github.com/hanielcedraz/refGenes.git
-   	 $ cd refGenes
-	 $ chmod +x refGenes.R
+   	 $ git clone https://github.com/hanielcedraz/endoGene.git
+   	 $ cd rendoGene
+	 $ chmod +x endoGene.R
 	
 	# Downloading zip file
 	   - Under the repository name, click Clone or download.
