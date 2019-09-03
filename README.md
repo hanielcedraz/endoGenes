@@ -7,7 +7,7 @@
 	# Cloning the whole repository (Git is required)
 	# Open the terminal on unixOS and navigate to your work directory
    	 $ git clone https://github.com/hanielcedraz/endoGenes.git
-   	 $ cd rendoGenes
+   	 $ cd endoGenes
 	 $ chmod +x endoGenes.R
 	
 	# Downloading zip file
