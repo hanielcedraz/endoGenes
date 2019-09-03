@@ -1,14 +1,14 @@
 
  
- # endoGene - Reference Genes Analysis
+ # endoGenes- Reference Genes Analysis
    This pipeline performs an automated analysis of the three most used algorithms to verify the stability of reference genes
  
 ## STEP.1 -Download this repository to a preference path:<br>
 	# Cloning the whole repository (Git is required)
 	# Open the terminal on unixOS and navigate to your work directory
    	 $ git clone https://github.com/hanielcedraz/endoGene.git
-   	 $ cd rendoGene
-	 $ chmod +x endoGene.R
+   	 $ cd rendoGenes
+	 $ chmod +x endoGenes.R
 	
 	# Downloading zip file
 	   - Under the repository name, click Clone or download.
@@ -23,11 +23,11 @@
     efficiency list (default: efficiencies_list.txt)
 
   ## Usage on linux or Mac OS terminal: </br>
-    $ ./endoGene.R -f dataset_file.txt -e efficiency_list.txt
+    $ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
     
     
     
-    Obs. Also you can open the endoGene.R file with your favorite R IDE and follow the script (not recomended)
+    Obs. Also you can open the endoGenes.R file with your favorite R IDE and follow the script (not recomended)
     
 
 
