@@ -182,18 +182,31 @@ png(paste(opt$output, '/', 'Rplot_gene_stability_by_NormFinder.png', sep = ''),
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set2")
-    matplot(cbind(Resulttotal$Ordered), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
+    matplot(cbind(Resulttotal$Ordered$Stability), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
     axis(1, at = 1:nrow(Resulttotal$Ordered), labels = as.character(rownames(Resulttotal$Ordered)))
-    axis(2, at = min(Resulttotal$Ordered):max(Resulttotal$Ordered), labels = as.character())
+    axis(2, at = min(Resulttotal$Ordered):max(Resulttotal$Ordered$Stability), labels = as.character())
     box()
     #abline(h = seq(0.2, 1.0, by = 0.2), lty = 1, lwd = 1, col = "grey")
 dev.off()
+
+# png(paste(opt$output, '/', 'Rplot_geneGroupDif_GroupSD_stability__by_NormFinder.png', sep = ''),
+#     width = 1280,
+#     height = 720,
+#     pointsize = 15)
+# mypalette <- brewer.pal(3, "Set2")
+# matplot(cbind(Resulttotal$Ordered), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
+# axis(1, at = 1:nrow(Resulttotal$Ordered), labels = as.character(rownames(Resulttotal$Ordered)))
+# axis(2, at = min(Resulttotal$Ordered):max(Resulttotal$Ordered), labels = as.character(colnames(Resulttotal$Ordered)))
+#
+# box()
+# #abline(h = seq(0.2, 1.0, by = 0.2), lty = 1, lwd = 1, col = "grey")
+# dev.off()
 
 
 #---------------------------------------BESTKEEPER---------------------------------------
 #Using ctrlGene package
 paste("BestKeeper analysis - Using ctrlGene package")
-bestkeeper_results = bestKeeper(ctvalue[,1:ncol(ctvalue)-1], ctVal = TRUE)
+bestkeeper_results = bestKeeper(ctvalue[,1:ncol(ctvalue) - 1], ctVal = TRUE)
 bestkeeper_results
 
 write.csv(bestkeeper_results$pair.Wise.cor, paste(opt$output, '/', 'Bestkeeper_results_pair_wise_correlation.csv', sep = ''), quote = FALSE)
@@ -234,16 +247,20 @@ ra_weight_ratools <- t(data.frame(NormFinder = Resulttotal$Ordered$Stability, Ge
 
 
 k <- ncol(ratools)
-pdf(paste(opt$output, '/', "RankAggreg_Iteraction_plot.pdf", sep = ''))
-if(k>10){
+
+if (k > 10) {
   write(paste('Using RankAggreg function - via the Cross-Entropy Monte Carlo algorithm or the Genetic Algorithm.'), stderr())
-    (CESP <- RankAggreg(ratools, k = ncol(ratools), ra_weight_ratools, method=opt$method, distance=opt$distance, weight = .25, rho = .1, maxIter = opt$iteraction, verbose = TRUE))
-}else{
+    (CESP <- RankAggreg(ratools, k = ncol(ratools), ra_weight_ratools, method = opt$method, distance = opt$distance, weight = .25, rho = .1, maxIter = opt$iteraction, verbose = TRUE))
+  pdf(paste(opt$output, '/', "RankAggreg_Iteraction_plot.pdf", sep = ''))
+  plot(CESP)
+  dev.off()
+}else {
   write(paste('Using BruteAggreg function - via the brute force approach.'), stderr())
     (CESP <- BruteAggreg(ratools, k = ncol(ratools), ra_weight_ratools, distance=opt$distance))
+  pdf(paste(opt$output, '/', "RankAggreg_Iteraction_plot.pdf", sep = ''))
+  plot(CESP)
+  dev.off()
 }
-dev.off()
-
 
 final_res <- data.frame(Rank = paste(1:length(CESP$top.list)), Gene = CESP$top.list)
 
