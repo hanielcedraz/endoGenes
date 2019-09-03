@@ -6,21 +6,31 @@
 
 
 #Install and Load Multiple R Packages
-paste("Install and Load needed Packages")
-Install_And_Load <- function(packages) {
-  k <- packages[!(packages %in% installed.packages()[,'Package'])];
-  if(length(k))
-    {ifelse(install.packages(k, repos = 'https://cran.rstudio.com/'), !requireNamespace("BiocManager", quietly = TRUE))
-      install.packages("BiocManager")
-      BiocManager::install(k);}
-
-  for(package_name in packages)
-    {suppressPackageStartupMessages(library(package_name, character.only = TRUE, quietly = TRUE));}
+if (!require("SLqPCR", quietly = TRUE)) {
+  if (!require("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager", repos = 'https://cran-r.c3sl.ufpr.br/')
+  }
+  BiocManager::install("SLqPCR")
+  library(SLqPCR)
 }
 
 
-Install_And_Load(c('SLqPCR', 'RColorBrewer', 'RankAggreg', 'gplots',
-                   'ctrlGene', 'optparse'))
+Install_Multiples_Packages <- function(packages) {
+  pack <- packages[!(packages %in% installed.packages()[,'Package'])];
+  if (length(pack)) {
+    install.packages(pack, repos = 'https://cran.rstudio.com/')
+  }
+
+  for (package_i in packages) {
+    suppressPackageStartupMessages(library(package_i, character.only = TRUE, quietly = TRUE))
+    }
+
+}
+
+
+
+Install_Multiples_Packages(c('RColorBrewer', 'RankAggreg', 'gplots', 'ctrlGene', 'optparse'))
+
 
 
 
@@ -62,7 +72,7 @@ option_list <- list(
 
 # get command line options, if help option encountered print help and exit,
 # otherwise if options not found on command line then set defaults,
-opt <- parse_args(OptionParser(option_list = option_list, description =  paste('Authors: OLIVEIRA, H.C., sep = "\n", Version: 0.0.1', sep = "\n")))
+opt <- parse_args(OptionParser(option_list = option_list, description =  paste('Authors: OLIVEIRA, H.C., sep = "\n", Version: 0.0.3', sep = "\n")))
 
 ## Preparing dataset
 final_folder <- opt$output
