@@ -31,9 +31,6 @@ Install_Multiples_Packages <- function(packages) {
 
 Install_Multiples_Packages(c('RColorBrewer', 'RankAggreg', 'gplots', 'ctrlGene', 'optparse'))
 
-
-
-
 # suppressPackageStartupMessages(library('optparse'))
 # suppressPackageStartupMessages(library('SLqPCR'))
 # suppressPackageStartupMessages(library('RColorBrewer'))
@@ -51,8 +48,8 @@ option_list <- list(
               help = "The filename of the gene efficience file [default %default]",
               dest = "efficiencyList"),
   make_option(c("-o", "--output"), type="character", default="01-results",
-              help="output folder [default %default]",
-              dest="output"),
+              help = "output folder [default %default]",
+              dest = "output"),
   make_option(c("-m", "--method"), type = "character", default = "CE",
               help = "method to be used to perform rank aggregation: Cross Entropy Monte Carlo (CE) or Genetic Algorithm (GA) in Rankaggreg analysis [default %default]",
               dest = "method"),
@@ -65,6 +62,9 @@ option_list <- list(
   make_option(c("-g", "--group"), type = "logical", default = "TRUE",
               help = "Analysis of Normfinder should be performed in groups? [default %default]",
               dest = "group"),
+  make_option(c("-n", "--normfinderFunction"), type = "character", default = "RnormfinderFunction.txt",
+              help = "Normfinder Function file [default %default]",
+              dest = "normfinderFunction"),
   make_option(c("-c", "--ctvalue"), type = "logical", default = "TRUE",
               help = "Analysis of Normfinder should be performed using raw ct values? [default %default]",
               dest = "ctVal")
@@ -161,7 +161,7 @@ dev.off()
 ### ---------------------------------------NORMFINDER ---------------------------------------
 #Using r.NormOldStab5.txt function file
 paste("NormFinder analysis - Using r.NormOldStab5.txt function")
-source("r.NormOldStab5.txt")
+source(opt$normfinderFunction)
 
 #### Analysis using ctvalue
 #
