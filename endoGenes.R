@@ -89,14 +89,15 @@ if (!file.exists(opt$efficiencyList)) {
   stop()
 }
 
-ctvalue <- read.table(opt$samplesFile, header = TRUE, dec = ',', row.names = 1); str(ctvalue); summary(ctvalue); head(ctvalue)
+
+ctvalue <- read.table(opt$samplesFile, header = TRUE, row.names = 1);head(ctvalue)
 
 
 ctvalue_new <- ctvalue[,-length(ctvalue)] #
 eficiencia <- read.table(opt$efficiencyList, dec = ',', header = TRUE, col.names = c('GENE', 'EFFICIENCY'))  # Efficiency values
 rel_values <- function(dados, efi_list){
   res <- list()
-  for(i in 1:dim(dados)[2]){
+  for (i in 1:dim(dados)[2]) {
     res[[i]] <- relQuantPCR(dados[,i], E = efi_list[i], na.rm = FALSE)
 
   }
