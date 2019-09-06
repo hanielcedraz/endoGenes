@@ -29,7 +29,7 @@ Install_Multiples_Packages <- function(packages) {
 
 
 
-Install_Multiples_Packages(c('RColorBrewer', 'RankAggreg', 'gplots', 'ctrlGene', 'optparse'))
+Install_Multiples_Packages(c('RColorBrewer', 'RankAggreg', 'gplots', 'ctrlGene', 'optparse', 'reshape2', 'ggplot2'))
 
 # suppressPackageStartupMessages(library('optparse'))
 # suppressPackageStartupMessages(library('SLqPCR'))
