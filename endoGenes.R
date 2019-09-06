@@ -91,6 +91,26 @@ if (!file.exists(opt$efficiencyList)) {
 
 
 ctvalue <- read.table(opt$samplesFile, header = TRUE, row.names = 1);head(ctvalue)
+dat.m <- melt(ctvalue, measure.vars=colnames(ctvalue[-ncol(ctvalue)]))
+#geral por gene
+png(paste(opt$output, '/', 'Rplot_boxplot_genes.png', sep = ''),
+    width = 1280,
+    height = 720,
+    pointsize = 15)
+ggplot(dat.m)+
+    geom_boxplot(aes(x = "", y=value, color=variable), outlier.shape = NA)+
+    labs(x="Genes", y = "Ct number")
+dev.off()
+
+#gene/grupo
+png(paste(opt$output, '/', 'Rplot_boxplot_groups.png', sep = ''),
+    width = 1280,
+    height = 720,
+    pointsize = 15)
+ggplot(dat.m) +
+    geom_boxplot(aes(x = variable, y = value, color = groups), outlier.shape = NA)+
+    labs(x = "Genes/Groups", y = "Ct number")
+dev.off()
 
 
 ctvalue_new <- ctvalue[,-length(ctvalue)] #
