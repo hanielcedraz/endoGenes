@@ -11,7 +11,7 @@
 	 $ chmod +x endoGenes.R
 	
 	# Downloading zip file
-	   - Under the repository name, click Clone or download.
+	   - Under the repository name, click in Clone or download.
 	   - Click on Download ZIP
 	  
 ## STEP.2 - Install R<br>
