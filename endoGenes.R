@@ -29,7 +29,7 @@ Install_Multiples_Packages <- function(packages) {
 
 
 
-Install_Multiples_Packages(c('RColorBrewer', 'RankAggreg', 'gplots', 'ctrlGene', 'optparse', 'reshape2', 'ggplot2'))
+Install_Multiples_Packages(c('RColorBrewer', 'RankAggreg', 'gplots', 'ctrlGene', 'optparse', 'reshape2', 'ggplot2', 'data.table'))
 
 # suppressPackageStartupMessages(library('optparse'))
 # suppressPackageStartupMessages(library('SLqPCR'))
@@ -47,7 +47,7 @@ option_list <- list(
   make_option(c("-e", "--efficiency"), type = "character", default = "efficiencies_list.txt",
               help = "The filename of the gene efficience file [default %default]",
               dest = "efficiencyList"),
-  make_option(c("-o", "--output"), type="character", default="01-results",
+  make_option(c("-o", "--output"), type = "character", default = "01-results",
               help = "output folder [default %default]",
               dest = "output"),
   make_option(c("-m", "--method"), type = "character", default = "CE",
@@ -76,8 +76,8 @@ opt <- parse_args(OptionParser(option_list = option_list, description =  paste('
 
 ## Preparing dataset
 final_folder <- opt$output
-if(!file.exists(file.path(final_folder))) dir.create(file.path(final_folder), recursive = TRUE, showWarnings = FALSE)
-
+if (!file.exists(file.path(final_folder))) dir.create(file.path(final_folder), recursive = TRUE, showWarnings = FALSE)
+setwd('/Users/haniel/Downloads/endoGenes')
 
 if (!file.exists(opt$samplesFile)) {
   write(paste("Sample file", opt$samplesFile, "does not exist\n"), stderr())
@@ -91,15 +91,15 @@ if (!file.exists(opt$efficiencyList)) {
 
 
 ctvalue <- read.table(opt$samplesFile, header = TRUE, row.names = 1);head(ctvalue)
-dat.m <- melt(ctvalue, measure.vars=colnames(ctvalue[-ncol(ctvalue)]))
+dat.m <- melt(ctvalue, measure.vars = colnames(ctvalue[-ncol(ctvalue)]))
 #geral por gene
 png(paste(opt$output, '/', 'Rplot_boxplot_genes.png', sep = ''),
     width = 1280,
     height = 720,
     pointsize = 15)
-ggplot(dat.m)+
-    geom_boxplot(aes(x = "", y=value, color=variable), outlier.shape = NA)+
-    labs(x="Genes", y = "Ct number")
+ggplot(dat.m) +
+    geom_boxplot(aes(x = "", y = value, color = variable), outlier.shape = NA) +
+    labs(x = "Genes", y = "Ct number")
 dev.off()
 
 #gene/grupo
@@ -108,7 +108,7 @@ png(paste(opt$output, '/', 'Rplot_boxplot_groups.png', sep = ''),
     height = 720,
     pointsize = 15)
 ggplot(dat.m) +
-    geom_boxplot(aes(x = variable, y = value, color = groups), outlier.shape = NA)+
+    geom_boxplot(aes(x = variable, y = value, color = groups), outlier.shape = NA) +
     labs(x = "Genes/Groups", y = "Ct number")
 dev.off()
 
@@ -153,9 +153,10 @@ png(paste(opt$output, '/', 'Rplot_gene_stability_by_genorm.png', sep = ''),
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set1")
-    matplot(cbind(rankingeral$MValue), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(rankingeral$MValue)), lty = 1, lwd = 2, main = "Gene stability measure by SLqPCR Package")
+    matplot(cbind(rankingeral$MValue), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(rankingeral$MValue)), lty = 1, lwd = 2, main = "Gene stability measure by SLqPCR Package (gNorm)")
     axis(1, at = 1:nrow(rankingeral), labels = as.character(rankingeral$Gene))
-    axis(2, at = min(rankingeral$MValue):max(rankingeral$MValue), labels = as.character())
+    axis(2, labels = as.character())
+    #axis(2, at = min(rankingeral$MValue):max(rankingeral$MValue), labels = as.character())
     box()
     abline(h = seq(0, max(rankingeral$MValue), by = 0.2), lty = 2, lwd = 1, col = "grey")
 dev.off()
@@ -203,12 +204,23 @@ png(paste(opt$output, '/', 'Rplot_gene_stability_by_NormFinder.png', sep = ''),
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set2")
-    matplot(cbind(Resulttotal$Ordered$Stability), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
+    matplot(cbind(Resulttotal$Ordered$Stability), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1:5, lwd = 2, main = "Gene Stability Measure by NormFinder")
     axis(1, at = 1:nrow(Resulttotal$Ordered), labels = as.character(rownames(Resulttotal$Ordered)))
-    axis(2, at = min(Resulttotal$Ordered):max(Resulttotal$Ordered$Stability), labels = as.character())
+    axis(2, labels = as.character())
+    #axis(2, at = min(Resulttotal$Ordered$Stability):max(Resulttotal$Ordered$Stability), tick = 0.5)
     box()
     #abline(h = seq(0.2, 1.0, by = 0.2), lty = 1, lwd = 1, col = "grey")
 dev.off()
+
+df <- data.table(Resulttotal$Ordered, keep.rownames = TRUE)
+ggplot(data = as.data.table(df), aes(x = df$Stability, y = "", fill = rn)) +
+geom_line() +
+geom_point()
+
+
+# Use the original data frame, but put factor() directly in the plot specification
+ggplot(data=datn, aes(x=factor(dose), y=length, fill=supp)) +
+  geom_bar(stat="identity", position=position_dodge())
 
 # png(paste(opt$output, '/', 'Rplot_geneGroupDif_GroupSD_stability__by_NormFinder.png', sep = ''),
 #     width = 1280,
@@ -237,7 +249,12 @@ write.csv(bestkeeper_results$HKG.vs.BestKeeper, paste(opt$output, '/', 'Bestkeep
 write.csv(bestkeeper_results$CP.statistics, paste(opt$output, '/', 'Bestkeeper_results_CP.statistics.csv', sep = ''), quote = FALSE)
 
 
-bestkeeper_genes <- t(sort(bestkeeper_results$CP.statistics[6,])); best_genes <- t(bestkeeper_genes); colnames(best_genes) <- paste('SD_Value')
+bestkeeper_genes <- t(sort(bestkeeper_results$CP.statistics[6,]));
+best_genes <- t(bestkeeper_genes);
+best_genes_values <- data.table(best_genes, keep.rownames = TRUE)
+colnames(best_genes_values) <- c('Genes', 'SD_Value')
+
+
 
 write.csv(best_genes, paste(opt$output, '/', 'Bestkeeper_best_genes_ordered.csv', sep = ''), quote = FALSE)
 
@@ -246,10 +263,10 @@ png(paste(opt$output, '/', 'Rplot_gene_stability_by_BestKeeper.png', sep = ''),
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set2")
-matplot(cbind(best_genes), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(best_genes)), lty = 1, lwd = 2, main = "Gene Stability Measure by NormFinder")
+matplot(cbind(best_genes), type = "b", ylab = "Average expression stability (Standard Deviation - SD)", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(best_genes_values$SD_Value)), lty = 1, lwd = 2, main = "Gene Stability Measure by Bestkeeper")
 axis(1, at = 1:nrow(best_genes), labels = as.character(rownames(best_genes)))
-axis(2, at = min(best_genes):max(best_genes), labels = as.character())
-box()
+axis(2, labels = as.character())
+#axis(2, at = min(best_genes_values$SD_Value):max(best_genes_values$SD_Value), labels = as.character())
 dev.off()
 #abline(h = seq(0.2, 1.0, by = 0.2), lty = 1, lwd = 1, col = "grey")
 
