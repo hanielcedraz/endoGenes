@@ -204,7 +204,7 @@ png(paste(opt$output, '/', 'Rplot_gene_stability_by_NormFinder.png', sep = ''),
     height = 720,
     pointsize = 15)
 mypalette <- brewer.pal(3, "Set2")
-    matplot(cbind(Resulttotal$Ordered$Stability), type = "b", ylab = "Average expression stability M", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1:5, lwd = 2, main = "Gene Stability Measure by NormFinder")
+    matplot(cbind(Resulttotal$Ordered$Stability), type = "b", ylab = "Average expression stability (S)", xlab = "<==== Most Stable Gene   Least Stable Gene ====>", axes = FALSE, pch = 19, col = mypalette, ylim = c(0, max(Resulttotal$Ordered)), lty = 1:5, lwd = 2, main = "Gene Stability Measure by NormFinder")
     axis(1, at = 1:nrow(Resulttotal$Ordered), labels = as.character(rownames(Resulttotal$Ordered)))
     axis(2, labels = as.character())
     #axis(2, at = min(Resulttotal$Ordered$Stability):max(Resulttotal$Ordered$Stability), tick = 0.5)
