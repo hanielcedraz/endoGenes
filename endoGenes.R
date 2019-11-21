@@ -77,7 +77,7 @@ opt <- parse_args(OptionParser(option_list = option_list, description =  paste('
 ## Preparing dataset
 final_folder <- opt$output
 if (!file.exists(file.path(final_folder))) dir.create(file.path(final_folder), recursive = TRUE, showWarnings = FALSE)
-setwd('/Users/haniel/Downloads/endoGenes')
+
 
 if (!file.exists(opt$samplesFile)) {
   write(paste("Sample file", opt$samplesFile, "does not exist\n"), stderr())
