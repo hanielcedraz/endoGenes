@@ -27,7 +27,7 @@
     
     
     
-    Obs. Also you can open the endoGenes.R file with your favorite R IDE and follow the script (not recomended)
+    ps. You can open the endoGenes.R file with your favorite R IDE and follow the script if your files have the default names(endogenous_ct.txt and efficiencies_list.txt).
     
 
 
