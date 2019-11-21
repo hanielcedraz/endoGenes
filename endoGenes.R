@@ -219,8 +219,8 @@ geom_point()
 
 
 # Use the original data frame, but put factor() directly in the plot specification
-ggplot(data=datn, aes(x=factor(dose), y=length, fill=supp)) +
-  geom_bar(stat="identity", position=position_dodge())
+#ggplot(data=datn, aes(x=factor(dose), y=length, fill=supp)) +
+#  geom_bar(stat="identity", position=position_dodge())
 
 # png(paste(opt$output, '/', 'Rplot_geneGroupDif_GroupSD_stability__by_NormFinder.png', sep = ''),
 #     width = 1280,
