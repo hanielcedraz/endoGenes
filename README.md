@@ -36,14 +36,11 @@
    ### Bestkeeper
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/SBcygpd/Screenshot-2019-11-21-at-15-41-06.png" alt="Screenshot-2019-11-21-at-15-41-06" border="0"></a>
 
-
    ### Genorm
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/GFc62DB/Screenshot-2019-11-21-at-15-33-01.png" alt="Screenshot-2019-11-21-at-15-33-01" border="0"></a>
    
    ### NormFinder
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/VxD8SJF/Screenshot-2019-11-21-at-15-36-55.png" alt="Screenshot-2019-11-21-at-15-36-55" border="0"></a>
-
-
 
    ### Final Ranking
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/W0HQjJy/Screenshot-2019-11-21-at-15-44-52.png" alt="Screenshot-2019-11-21-at-15-44-52" border="0"></a>
