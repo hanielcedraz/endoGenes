@@ -34,75 +34,19 @@
 # results
  ## Tables
    ### Bestkeeper
-   |   GeneName    |   SD_Value    |
-   |   :---:   |   :---:   |
-   |   RPL5    |   0.666    |
-   |   MRPS27  |   0.819    |
-   |   HPRT1   |   0.832    |
-   |   HMBS    |   0.836    |
-   |   MRPS30  |   0.92    |
-   |   EEF1    |   0.926    |
-   |   HSF3    |   1.068    |
-   |   LDAH    |   1.101    |
-   |   ACTB    |   1.167    |
-   |   ACTA1    |   1.176    |
-   |   HSP90    |   1.356    |
-   |   TFRC    |   1.458    |
-   |   HSP70    |   2.443    |
+ <a href="https://imgbb.com/"><img src="https://i.ibb.co/SBcygpd/Screenshot-2019-11-21-at-15-41-06.png" alt="Screenshot-2019-11-21-at-15-41-06" border="0"></a>
 
 
    ### Genorm
-   |   rank  |  Gene |  MValue   |
-   |   :---:   |   :---:   |   :---:  |
-   |   1  |   MRPS27  |   0.334591317    |
-   |   1  |   MRPS30  |   0.334591317    |
-   |   3  |   RPL5  |   0.480490089    |
-   |   4  |   EEF1  |   0.642778744    |
-   |   5  |   HPRT1  |   0.803047241    |
-   |   6  |   LDAH  |   0.964291421    |
-   |   7  |   ACTA1  |   1.039277933    |
-   |   8  |   ACTB  |   1.118329727    |
-   |   9  |   HMBS  |   1.19942579    |
-   |   10  |   HSF3  |   1.269338025    |
-   |   11  |   TFRC  |   1.369055031    |
-   |   12  |   HSP90  |   1.471023544    |
-   |   13  |   HSP70  |   1.657421221    |
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/GFc62DB/Screenshot-2019-11-21-at-15-33-01.png" alt="Screenshot-2019-11-21-at-15-33-01" border="0"></a>
    
    ### NormFinder
-|	GeneName	 |  GroupDif	|	GroupSD |	Stability   |
-|	:---:	   |	:---:		|	:---:  |	:---:	   |
-|	RPL5	|	0.43	|	0.62	|	0.29	|
-|	HPRT1	|	0.34	|	0.76	|	0.31	|
-|	MRPS30	|	0.34	|	0.75	|	0.31	|
-|	MRPS27	|	0.4	|	0.75	|	0.32	|
-|	ACTA1	|	0.06	|	1.27	|	0.32	|
-|	EEF1	|	0.56	|	0.78	|	0.34	|
-|	LDAH	|	0.27	|	1.11	|	0.37	|
-|	HSF3	|	0.4	|	1.13	|	0.4	|
-|	ACTB	|	1.47	|	0.91	|	0.49	|
-|	HMBS	|	1.44	|	1.1	|	0.5	|
-|	TFRC	|	0.95	|	1.65	|	0.55	|
-|	HSP90	|	1.76	|	1.44	|	0.56	|
-|	HSP70	|	1.11	|	2.51	|  0.78	|
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/VxD8SJF/Screenshot-2019-11-21-at-15-36-55.png" alt="Screenshot-2019-11-21-at-15-36-55" border="0"></a>
 
 
 
    ### Final Ranking
-|	Rank	|	GeneName	|
-|	:---:	|	:---:	|
-|	1	|	MRPS27	|
-|	2	|	MRPS30	|
-|	3	|	RPL5	|
-|	4	|	HPRT1	|
-|	5	|	EEF1	|
-|	6	|	LDAH	|
-|	7	|	ACTA1	|
-|	8	|	HSF3	|
-|	9	|	HMBS	|
-|	10	|	ACTB	|
-|	11	|	TFRC	|
-|	12	|	HSP90	|
-|	13	|	HSP70	|
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/W0HQjJy/Screenshot-2019-11-21-at-15-44-52.png" alt="Screenshot-2019-11-21-at-15-44-52" border="0"></a>
 
 
 
