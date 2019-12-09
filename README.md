@@ -27,7 +27,7 @@
     
     
     
-    ps. You can open the endoGenes.R file with your favorite R IDE and follow the script if your files have the default names(endogenous_ct.txt and efficiencies_list.txt).
+    ps. If you do not use Linux or macOS, use the file run_endoGenes_notebook.ipynb to run your analysis.
     
 
 
