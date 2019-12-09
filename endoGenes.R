@@ -91,7 +91,7 @@ if (!file.exists(opt$efficiencyList)) {
 
 
 ctvalue <- read.table(opt$samplesFile, header = TRUE, row.names = 1);head(ctvalue)
-dat.m <- melt(ctvalue, measure.vars = colnames(ctvalue[-ncol(ctvalue)]))
+dat.m <- reshape2::melt(ctvalue, measure.vars = colnames(ctvalue[-ncol(ctvalue)]))
 #geral por gene
 png(paste(opt$output, '/', 'Rplot_boxplot_genes.png', sep = ''),
     width = 1280,
