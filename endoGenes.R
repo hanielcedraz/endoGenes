@@ -212,11 +212,6 @@ mypalette <- brewer.pal(3, "Set2")
     #abline(h = seq(0.2, 1.0, by = 0.2), lty = 1, lwd = 1, col = "grey")
 dev.off()
 
-df <- data.table(Resulttotal$Ordered, keep.rownames = TRUE)
-ggplot(data = as.data.table(df), aes(x = df$Stability, y = "", fill = rn)) +
-geom_line() +
-geom_point()
-
 
 # Use the original data frame, but put factor() directly in the plot specification
 #ggplot(data=datn, aes(x=factor(dose), y=length, fill=supp)) +
