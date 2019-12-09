@@ -11,7 +11,7 @@ if (!require("SLqPCR", quietly = TRUE)) {
     install.packages("BiocManager", repos = 'https://cran-r.c3sl.ufpr.br/')
   }
   BiocManager::install("SLqPCR")
-  library(SLqPCR)
+  suppressPackageStartupMessages(library(SLqPCR))
 }
 
 
