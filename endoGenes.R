@@ -301,4 +301,4 @@ write.csv(final_res, paste(opt$output, '/', 'Final_ranking.csv', sep = ''), quot
 
 
 
-paste("It's done. See ", opt$output, "folder")
+write(paste("It's done. See ", opt$output, "folder"), stderr())
