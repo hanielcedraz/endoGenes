@@ -251,7 +251,7 @@ colnames(best_genes_values) <- c('Genes', 'SD_Value')
 
 
 
-write.csv(best_genes, paste(opt$output, '/', 'Bestkeeper_best_genes_ordered.csv', sep = ''), quote = FALSE)
+write.csv(best_genes_values, paste(opt$output, '/', 'Bestkeeper_best_genes_ordered.csv', sep = ''), quote = FALSE)
 
 png(paste(opt$output, '/', 'Rplot_gene_stability_by_BestKeeper.png', sep = ''),
     width = 1280,
