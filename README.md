@@ -27,7 +27,7 @@
     
     
     
-    ps. If you do not use Linux or macOS, use the file run_endoGenes_notebook.ipynb to run your analysis.
+    ps. If you do not use Linux or macOS, use the file run_endoGenes_notebook.ipynb and click in "Open in Colab" at the top to run your analysis.
     
 
 
