@@ -22,9 +22,13 @@
     dataset file (default: endogenous_ct.txt)
     efficiency list (default: efficiencies_list.txt)
 
-  ## Usage on linux or Mac OS terminal: </br>
-    $ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
+    #The amplification efficiency (2 = 100%). efficiency_values = E+1.
     
+## Usage on linux or Mac OS terminal: </br>
+
+```bash
+$ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
+```  
     
     
     ps. If you do not use Linux or macOS, use the file run_endoGenes_notebook.ipynb and click in "Open in Colab" at the top to run your analysis.
