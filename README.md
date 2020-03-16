@@ -31,7 +31,7 @@ $ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
 ```  
     
     
-    ps. If you do not use Linux or macOS, use the file run_endoGenes_notebook.ipynb and click in "Open in Colab" at the top to run your analysis.
+If you do not use Linux or macOS, <a href="https://github.com/hanielcedraz/endoGenes/blob/master/run_endoGenes_notebook.ipynb">click here</a> and run it using Google Colab.
     
 
 
