@@ -32,7 +32,8 @@ $ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
     
     
 If you do not use Linux or macOS, <a href="https://github.com/hanielcedraz/endoGenes/blob/master/run_endoGenes_notebook.ipynb">click here</a> and run it using Google Colab.
-    
+
+Also it is possible to run a ShinyApp. https://hanielcedraz.shinyapps.io/endoGenes/
 
 
 # Results
