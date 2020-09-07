@@ -26,15 +26,16 @@
     
 ## Usage on linux or Mac OS terminal: </br>
 
-	```bash
+```bash
 	$ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
-	```  
+```  
     
 ## For those who do not use linux or macOS
-	```html
+
+```html
 	Google Colab: <a href="https://github.com/hanielcedraz/endoGenes/blob/master/run_endoGenes_notebook.ipynb">click here</a>
 	ShinyApp. https://hanielcedraz.shinyapps.io/endoGenes/
-	```
+```
 
 # Results
  ## Tables
