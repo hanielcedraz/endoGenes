@@ -29,7 +29,10 @@
 ```bash
 $ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
 ```  
-    
+
+<br>  
+<br>  
+<br>  
 ## For those who do not use linux or macOS
 #### Google Colab: https://github.com/hanielcedraz/endoGenes/blob/master/run_endoGenes_notebook.ipynb
 #### ShinyApp: https://hanielcedraz.shinyapps.io/endoGenes/
