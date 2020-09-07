@@ -26,15 +26,15 @@
     
 ## Usage on linux or Mac OS terminal: </br>
 
-```bash
-$ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
-```  
+	```bash
+	$ ./endoGenes.R -f dataset_file.txt -e efficiency_list.txt
+	```  
     
-    
-If you do not use Linux or macOS, <a href="https://github.com/hanielcedraz/endoGenes/blob/master/run_endoGenes_notebook.ipynb">click here</a> and run it using Google Colab.
-
-Also it is possible to run a ShinyApp. https://hanielcedraz.shinyapps.io/endoGenes/
-
+## For those who do not use linux or macOS
+	```html
+	Google Colab: <a href="https://github.com/hanielcedraz/endoGenes/blob/master/run_endoGenes_notebook.ipynb">click here</a>
+	ShinyApp. https://hanielcedraz.shinyapps.io/endoGenes/
+	```
 
 # Results
  ## Tables
