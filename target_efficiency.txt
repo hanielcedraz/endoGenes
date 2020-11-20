@@ -1,0 +1,4 @@
+Gene	efficiency
+HSF3	2
+HSP90	2
+HSP70	2
